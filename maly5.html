@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+    <div class="sim-slider">
+        <ul class="sim-slider-list">
+          <li><img src="https://bikesale.de/media/image/7a/7a/ea/Kettler_QUADRIGA_TOWN_-_COUNTRY_E-Trekkingbikes_1.jpg" alt="screen"></li> <!-- это экран -->
+          <li class="sim-slider-element"><img src="https://bikesale.de/media/image/c4/f8/d8/Kettler_QUADRIGA_TOWN_-_COUNTRY_E-Trekkingbikes_10.jpg"width="1000px" alt="0"></li>
+          <li class="sim-slider-element"><img src="https://bikesale.de/media/image/a6/b9/70/Kettler_QUADRIGA_TOWN_-_COUNTRY_E-Trekkingbikes_2.jpg"width='1000px' alt="1"></li>
+          <li class="sim-slider-element"><img src="https://bikesale.de/media/image/d3/15/8a/Kettler_QUADRIGA_TOWN_-_COUNTRY_E-Trekkingbikes_3.jpg"width='1000px' alt="2"></li>
+          <li class="sim-slider-element"><img src="https://bikesale.de/media/image/c5/77/96/Kettler_QUADRIGA_TOWN_-_COUNTRY_E-Trekkingbikes_4.jpg"width='1000px' alt="3"></li>
+          <li class="sim-slider-element"><img src="https://bikesale.de/media/image/78/14/b4/Kettler_QUADRIGA_TOWN_-_COUNTRY_E-Trekkingbikes_5.jpg"width='1000px' alt="4"></li>
+          <li class="sim-slider-element"><img src="https://bikesale.de/media/image/13/f1/11/Kettler_QUADRIGA_TOWN_-_COUNTRY_E-Trekkingbikes_7.jpg"width='1000px' alt="5"></li>
+        </ul>
+        <div class="sim-slider-arrow-left"></div>
+        <div class="sim-slider-arrow-right"></div>
+        <div class="sim-slider-dots"></div>
+      </div>
+<head>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <div>
+       
+    </div>
+    <h1>Велосипед Diamont</h1>
+    <h2>Цена 45600</h2>
+    <div>Характеристики</div>
+    <div>- Размер рамы 20</div>
+    <div>- Размер колес 26 дюйм</div>
+    <div>- Материал рамы: :Железный сплав</div>
+    <div>- Тормаза механические</div>
+    <div>- Доставка по.г Шымкент бесплатно!</div>
+    <title>Велосипеды Шымкент</title>
+<p>
+    <div>
+        Наличие на складе: 2штг
+    </div>
+</p>
+    <i class="fa fa-phone"> 87057034221</i>
+</head>
+<body>
+    <style>
+ img {
+  width: 100%; 
+}
+
+.sim-slider {
+  max-width: 1000px;
+  min-width: 320px;
+  margin: 20px auto;
+  padding: 30px 50px;
+  border: 1px solid #ccd;
+  background-color: white;
+}
+
+/* General styles */
+.sim-slider {
+  position: relative;
+}
+
+.sim-slider-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  position: relative;
+}
+
+.sim-slider-element {
+  width: 100%;
+  transition: opacity 1s ease-in;
+  opacity: 0;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  display: block;
+}
+
+/* Navigation item styles */
+div.sim-slider-arrow-left,
+div.sim-slider-arrow-right {
+  width: 22px;
+  height: 40px;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0.6;
+  z-index: 4;
+}
+
+div.sim-slider-arrow-left {
+  left: 10px;
+  top: 40%;
+  display: block;
+  background: url("http://pvbk.spb.ru/inc/slider/sim-files/sim-arrow-left.png") no-repeat;
+}
+
+div.sim-slider-arrow-right {
+  right: 10px;
+  top: 40%;
+  display: block;
+  background: url("http://pvbk.spb.ru/inc/slider/sim-files/sim-arrow-right.png") no-repeat;
+}
+
+div.sim-slider-arrow-left:hover {
+  opacity: 1.0;
+}
+
+div.sim-slider-arrow-right:hover {
+  opacity: 1.0;
+}
+
+div.sim-slider-dots {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 3;
+  text-align: center;
+}
+
+span.sim-dot {
+  width: 10px;
+  height: 10px;
+  margin: 5px 7px;
+  padding: 0;
+  display: inline-block;
+  background-color: #BBB;
+  border-radius: 5px;
+  cursor: pointer;
+}
+i{
+    font-size: 20px;
+}
+    </style>
+    <script>
+         function Sim(sldrId) {
+
+let id = document.getElementById(sldrId);
+if(id) {
+  this.sldrRoot = id
+}
+else {
+  this.sldrRoot = document.querySelector('.sim-slider')
+};
+
+// Carousel objects
+this.sldrList = this.sldrRoot.querySelector('.sim-slider-list');
+this.sldrElements = this.sldrList.querySelectorAll('.sim-slider-element');
+this.sldrElemFirst = this.sldrList.querySelector('.sim-slider-element');
+this.leftArrow = this.sldrRoot.querySelector('div.sim-slider-arrow-left');
+this.rightArrow = this.sldrRoot.querySelector('div.sim-slider-arrow-right');
+this.indicatorDots = this.sldrRoot.querySelector('div.sim-slider-dots');
+
+// Initialization
+this.options = Sim.defaults;
+Sim.initialize(this)
+};
+
+Sim.defaults = {
+
+// Default options for the carousel
+loop: true,     // Бесконечное зацикливание слайдера
+auto: true,     // Автоматическое пролистывание
+interval: 5000, // Интервал между пролистыванием элементов (мс)
+arrows: true,   // Пролистывание стрелками
+dots: true      // Индикаторные точки
+};
+
+Sim.prototype.elemPrev = function(num) {
+num = num || 1;
+
+let prevElement = this.currentElement;
+this.currentElement -= num;
+if(this.currentElement < 0) this.currentElement = this.elemCount-1;
+
+if(!this.options.loop) {
+  if(this.currentElement == 0) {
+    this.leftArrow.style.display = 'none'
+  };
+  this.rightArrow.style.display = 'block'
+};
+
+this.sldrElements[this.currentElement].style.opacity = '1';
+this.sldrElements[prevElement].style.opacity = '0';
+
+if(this.options.dots) {
+  this.dotOn(prevElement); this.dotOff(this.currentElement)
+}
+};
+
+Sim.prototype.elemNext = function(num) {
+num = num || 1;
+
+let prevElement = this.currentElement;
+this.currentElement += num;
+if(this.currentElement >= this.elemCount) this.currentElement = 0;
+
+if(!this.options.loop) {
+  if(this.currentElement == this.elemCount-1) {
+    this.rightArrow.style.display = 'none'
+  };
+  this.leftArrow.style.display = 'block'
+};
+
+this.sldrElements[this.currentElement].style.opacity = '1';
+this.sldrElements[prevElement].style.opacity = '0';
+
+if(this.options.dots) {
+  this.dotOn(prevElement); this.dotOff(this.currentElement)
+}
+};
+
+Sim.prototype.dotOn = function(num) {
+this.indicatorDotsAll[num].style.cssText = 'background-color:#BBB; cursor:pointer;'
+};
+
+Sim.prototype.dotOff = function(num) {
+this.indicatorDotsAll[num].style.cssText = 'background-color:#556; cursor:default;'
+};
+
+Sim.initialize = function(that) {
+
+// Constants
+that.elemCount = that.sldrElements.length; // Количество элементов
+
+// Variables
+that.currentElement = 0;
+let bgTime = getTime();
+
+// Functions
+function getTime() {
+  return new Date().getTime();
+};
+function setAutoScroll() {
+  that.autoScroll = setInterval(function() {
+    let fnTime = getTime();
+    if(fnTime - bgTime + 10 > that.options.interval) {
+      bgTime = fnTime; that.elemNext()
+    }
+  }, that.options.interval)
+};
+
+// Start initialization
+if(that.elemCount <= 1) {   // Отключить навигацию
+  that.options.auto = false; that.options.arrows = false; that.options.dots = false;
+  that.leftArrow.style.display = 'none'; that.rightArrow.style.display = 'none'
+};
+if(that.elemCount >= 1) {   // показать первый элемент
+  that.sldrElemFirst.style.opacity = '1';
+};
+
+if(!that.options.loop) {
+  that.leftArrow.style.display = 'none';  // отключить левую стрелку
+  that.options.auto = false; // отключить автопркрутку
+}
+else if(that.options.auto) {   // инициализация автопрокруки
+  setAutoScroll();
+  // Остановка прокрутки при наведении мыши на элемент
+  that.sldrList.addEventListener('mouseenter', function() {clearInterval(that.autoScroll)}, false);
+  that.sldrList.addEventListener('mouseleave', setAutoScroll, false)
+};
+
+if(that.options.arrows) {  // инициализация стрелок
+  that.leftArrow.addEventListener('click', function() {
+    let fnTime = getTime();
+    if(fnTime - bgTime > 1000) {
+      bgTime = fnTime; that.elemPrev()
+    }
+  }, false);
+  that.rightArrow.addEventListener('click', function() {
+    let fnTime = getTime();
+    if(fnTime - bgTime > 1000) {
+      bgTime = fnTime; that.elemNext()
+    }
+  }, false)
+}
+else {
+  that.leftArrow.style.display = 'none'; that.rightArrow.style.display = 'none'
+};
+
+if(that.options.dots) {  // инициализация индикаторных точек
+  let sum = '', diffNum;
+  for(let i=0; i<that.elemCount; i++) {
+    sum += '<span class="sim-dot"></span>'
+  };
+  that.indicatorDots.innerHTML = sum;
+  that.indicatorDotsAll = that.sldrRoot.querySelectorAll('span.sim-dot');
+  // Назначаем точкам обработчик события 'click'
+  for(let n=0; n<that.elemCount; n++) {
+    that.indicatorDotsAll[n].addEventListener('click', function() {
+      diffNum = Math.abs(n - that.currentElement);
+      if(n < that.currentElement) {
+        bgTime = getTime(); that.elemPrev(diffNum)
+      }
+      else if(n > that.currentElement) {
+        bgTime = getTime(); that.elemNext(diffNum)
+      }
+      // Если n == that.currentElement ничего не делаем
+    }, false)
+  };
+  that.dotOff(0);  // точка[0] выключена, остальные включены
+  for(let i=1; i<that.elemCount; i++) {
+    that.dotOn(i)
+  }
+}
+};
+
+new Sim();
+    </script>
+</body>
+</html>

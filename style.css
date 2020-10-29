@@ -1,0 +1,47 @@
+
+img{
+    height: medium;
+    width: medium;
+}
+div{
+    font-size: 20px;
+    
+}
+div.mal{
+    text-align: center;
+    color: green;
+}
+div.gallery{
+    margin:5px;
+    border:1px solid #ccc;
+    float:left;
+    width:300px;
+}
+div.gallery:hover{
+    border:1px solid #777;
+}
+div.gallery img{
+    width:100%;
+    height: auto;
+}
+div.desc{
+    padding:15px;
+    text-align:center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.dropdown{
+position: relative;;
+display: inline-block;
+}
+.dropdown-content{
+display: none;
+position: absolute;
+background-color: white;
+min-width: 160px;
+box-shadow: 0px 10px 10px gray;
+padding:12px 16px;
+z-index: 1;
+}
+.dropdown:hover .dropdown-content{
+display: block;
+}
